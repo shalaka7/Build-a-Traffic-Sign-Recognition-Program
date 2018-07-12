@@ -14,7 +14,7 @@
 ## Writeup
 
 #### You can use this file as a template for your writeup if you want to submit it as a markdown file, but feel free to 
-####use some other method and submit a pdf if you prefer.
+#### use some other method and submit a pdf if you prefer.
 
 **Build a Traffic Sign Recognition Project**
 
@@ -29,8 +29,8 @@ The goals / steps of this project are the following:
 ### Writeup / README
 
 #### 1. Provide a Writeup / README that includes all the rubric points and how you addressed each one. You can submit 
-####your writeup as markdown or pdf. You can use this template as a guide for writing the report. The submission includes
-####the project code.
+#### your writeup as markdown or pdf. You can use this template as a guide for writing the report. The submission includes
+#### the project code.
 
 You're reading it!
 here is a link to my [project code](https://github.com/shalaka7/udacity_project_2/blob/master/Traffic_Sign_Classifier.ipynb)
@@ -38,7 +38,7 @@ here is a link to my [project code](https://github.com/shalaka7/udacity_project_
 ### Data Set Summary & Exploration
 
 #### 1. Provide a basic summary of the data set. In the code, the analysis should be done using python, numpy and/or 
-####pandas methods rather than hardcoding results manually.
+#### pandas methods rather than hardcoding results manually.
 
 I used the pandas library to calculate summary statistics of the traffic
 signs data set:
@@ -59,7 +59,7 @@ Max number of images per class = 2010
 ### Design and Test a Model Architecture
 
 #### 1. Describe how you preprocessed the image data. What techniques were chosen and why did you choose these techniques?
-####Consider including images showing the output of each preprocessing technique.
+#### Consider including images showing the output of each preprocessing technique.
 
 Pre-processingis very important aspect in this project. Every image is converted into gray scale image then ,
 The image data should be normalized so that the data has mean zero and equal variance. For image data, (pixel - 128)/ 128 
@@ -71,14 +71,14 @@ identify or classify signals very carefully.
 
 
 #### 2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.)
-####Consider including a diagram and/or table describing the final model.
+#### Consider including a diagram and/or table describing the final model.
 
 My final model consisted of 5 layers. Input is 32*32*3 RGB image. convolution is 1*1 stride [1,1,1,1] with same padding 
 we get output 32 *32*32.
 we followed by 5 layers.maximum pooling with 2*2 stride we get output 16*16*64.All layer are fully connected
 
 #### 3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of
-####epochs and any hyperparameters such as learning rate.
+#### epochs and any hyperparameters such as learning rate.
 
 To train the model, 
 I used an batch size with 100,
@@ -87,34 +87,34 @@ mu is 0 and sigma: 0.1
 
 
 #### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. 
-####Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. 
-####Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and
-####why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case,
-####discuss why you think the architecture is suitable for the current problem.
+#### Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. 
+#### Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and
+#### why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case,
+#### discuss why you think the architecture is suitable for the current problem.
 
 My final model results were:
 * training set accuracy of 94%
 * test set accuracy of 75%
 
 ####If an iterative approach was chosen:
-####(1)What was the first architecture that was tried and why was it chosen?
+#### (1)What was the first architecture that was tried and why was it chosen?
 I have used LeNet architectureas per suggestion of lectures
 
-####(2)What were some problems with the initial architecture?
+#### (2)What were some problems with the initial architecture?
 While working on LeNet architecture ,accuracy of model not giving proper decision enough due to image 
 data was not pre-processed also the model overfitting data which result in poor validationn accuracy. after preprocessing 
 image it gives us good validation accuracy.
 
-####(3)How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model 
-####architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing 
-####the activation function. One common justification for adjusting an architecture would be due to overfitting or underfitting. 
-####A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both 
-####sets indicates under fitting.
+#### (3)How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model 
+#### architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing 
+#### the activation function. One common justification for adjusting an architecture would be due to overfitting or underfitting. 
+#### A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both 
+#### sets indicates under fitting.
  Introduced dropout at first convolution layer, at first Fully connected layer and at last Fully connected layer, dropout
 layer is play very important role to avoid overfitting of data and for proper decision required accuracy for validation 
 data set. It was high 0.7 to avoid underfitting. 
 
-####(4)Which parameters were tuned? How were they adjusted and why?
+#### (4)Which parameters were tuned? How were they adjusted and why?
 Learning Rate, Batch Size, Epoch, Keep probability for dropout.
 Learning Rate:- Higher Learning rate train model faster but stagnant earlier than acheving its full potential, 
 whereas for lower learning rate model train slower but it achieves lowest possible loss for that model. in our model 
@@ -159,8 +159,8 @@ Here are eight German traffic signs that I found on the web:
  
 
 #### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set.
-####At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to 
-####the accuracy on the test set
+#### At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to 
+#### the accuracy on the test set
 
 Here are the results of the prediction:
 
@@ -181,8 +181,8 @@ So compared acuuracy is about 80 %
 
 
 #### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax 
-####probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type 
-####of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also
+#### probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type 
+#### of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also
 ### be provided such as bar charts)
 
 
